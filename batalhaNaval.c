@@ -56,7 +56,12 @@ int main() {
     inicializarTabuleiro(tabuleiro);
     
     // função recursiva para ativar o desenho no tabuleiro
-    criarDesenho(tabuleiro, 0, 1, 2); // 
+    criarDesenho(tabuleiro, 0, 1, 2); 
+    /*
+     O primeiro numero define em qual parte do tabuleiro o triangulo vai ficar na parte de cima ou na parte de baixo.
+     O segundo numero define em qual lado do tabuleiro o triangulo vai ficar na esquerda o na direita.
+     O terceiro numero define quantas linhas o triangulo vai ocupar quanto maior o numero mais espaço o triangulo vai ocupar no tabuleiro.
+    */
     
     // função recursiva para imprimir o tabuleiro
     iniciarTabuleiro(tabuleiro);

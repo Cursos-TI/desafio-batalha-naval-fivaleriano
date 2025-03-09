@@ -8,20 +8,20 @@ void inicializarTabuleiro(int iniciar[linhas][colunas]) {
 
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
-            iniciar[i][j] = 0; 
+            iniciar[i][j] = 0; // criar o mar de '0'
     }
 }
 }
 
 // Função para desenhar um triângulo no tabuleiro usando a recursividade
-void criarDesenho(int iniciar[linhas][colunas], int x, int y, int tamanho){
+void criarDesenho(int iniciar[linhas][colunas], int x, int y, int tamanho){ //criei 3 variaveis do tipo inteira para poder alterar "pintar" o desenho no tabuleiro
 
-    for (int i = 0; i < tamanho; i++) { // esse for externo determina a altura do triângulo
+    for (int i = 0; i < tamanho; i++) { // esse for externo determina o tamanho do triângulo quanto maior o numero maior o triangulo
         for (int j = -i; j <= i; j++) { // esse for interno determina a largura do triângulo
-            int pontX = x + i; // de acordo com o numero atribuido ao x ele ira somar com o i
-            int pontY = y + j; // de acordo com o numero atribuido ao y ele ira somar com j
-            if (pontX >= 0 && pontX < linhas && pontY >= 0 && pontY < colunas) { // if usado para criar a logica do programa.
-                iniciar[pontX][pontY] = 5; // função para pintar o triângulo 
+            int pontX = x + i; // de acordo com o numero atribuido ao x ele ira somar com o i, assim quanto menor o numero de x o triangulo ocupara a parte de cima do tabuleiro.
+            int pontY = y + j; // de acordo com o numero atribuido ao y ele ira somar com j, ja na variavel y voçê define o lado em que o triangulo vai ficar mais pra esquerda ou para direita.
+            if (pontX >= 0 && pontX < linhas && pontY >= 0 && pontY < colunas) { // if usado para criar a logica do programa para criar o formato dentro da matriz.
+                iniciar[pontX][pontY] = 5; // função para pintar o triângulo com o numero definido.
             }
       
 
@@ -56,7 +56,7 @@ int main() {
     inicializarTabuleiro(tabuleiro);
     
     // função recursiva para ativar o desenho no tabuleiro
-    criarDesenho(tabuleiro, 1, 2, 3);
+    criarDesenho(tabuleiro, 0, 1, 2); // 
     
     // função recursiva para imprimir o tabuleiro
     iniciarTabuleiro(tabuleiro);
